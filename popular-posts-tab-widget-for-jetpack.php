@@ -54,10 +54,6 @@ class Popular_Posts_Tabbed_Widget_Jetpack extends WP_Widget {
 	private static $current_instance = null;
 	const _tablename = 'popularpostsdata';
 	
-	function Popular_Posts_Tabbed_Widget_Jetpack () {
-		$this->__construct();
-	}
-	
 	function __construct(){
 		
 		include_once PPTWJ_DIR . 'get-the-image.php';
@@ -111,6 +107,10 @@ class Popular_Posts_Tabbed_Widget_Jetpack extends WP_Widget {
 			add_action( 'wp_ajax_pptwj_tabwidget_list', array( 'Popular_Posts_Tabbed_Widget_Jetpack', 'ajaxProcessor') );
 			add_action( 'wp_ajax_nopriv_pptwj_tabwidget_list', array( 'Popular_Posts_Tabbed_Widget_Jetpack', 'ajaxProcessor' ) );
 		}
+	}
+	
+	function Popular_Posts_Tabbed_Widget_Jetpack () {
+		$this->__construct();
 	}
 
    /*----------------------------------------
